@@ -1,0 +1,55 @@
+@startuml Lead Flow & Configurability
+
+' Layout
+left to right direction
+skinparam linetype polyline
+skinparam rectangleBorderColor #666666
+skinparam rectangleBackgroundColor #FFFFFF
+skinparam cloudBackgroundColor #F5F5F5
+
+' title Landing Page Lead Flow & Configurability
+
+' Main Flow (horizontal)
+cloud "Ad Platforms" as ad_platforms #F5F5F5
+rectangle "Landing Engine" as landing_engine #E3F2FD
+rectangle "Page Variant" as page_variants #E3F2FD
+rectangle "Lead Form" as lead_capture #E3F2FD
+rectangle "Booking API" as booking_flow #E3F2FD
+rectangle "Backend" as backend #E3F2FD
+cloud "Postback" as postback #F5F5F5
+
+rectangle "Marketing Configuration" as cms_config #FFF8E1
+
+rectangle "Server Tracking" as server_tracking #E8F5E9
+
+ad_platforms --> landing_engine : "UTM params"
+landing_engine --> page_variants : "render"
+page_variants --> lead_capture : "submit"
+lead_capture --> booking_flow : "book"
+booking_flow --> backend : "store"
+backend --> postback : "postback"
+
+cms_config --> landing_engine : "config"
+
+lead_capture --> server_tracking : "track"
+server_tracking --> backend : "attribution"
+
+' note top of cms_config
+'   **Configurable by non-technical teams**
+'   --
+'   • A/B test split ratios
+'   • Time-based variants
+'   • Campaign targeting
+'   • Geo-targeting
+'   • Component editing
+' end note
+
+note bottom of server_tracking
+  **Cookie-independent tracking**
+  --
+  • Meta API
+  • TikTok API
+  • GA
+end note
+
+@enduml
