@@ -34,10 +34,6 @@ The landing page is fully configurable by non-technical teams through a CMS inte
 - **Geo-Targeting by Lead Country:** Display localized content, pricing, and offers.
 - **Component-Level Editing:** Modify text, images, CTAs, and section visibility directly from the CMS.
 
-|          NY Campaign             |          KSA Variant           |          Ramadan Campaign          |
-| :------------------------------: | :----------------------------: | :--------------------------------: |
-| ![Base](media/variants/NY.png)   | ![KSA](media/variants/KSA.png) | ![Ramadan](media/variants/RMD.png) |
-
 ## Demo
 
 https://github.com/user-attachments/assets/ff7e7fe7-7c7c-4272-9e76-5a237004a153
